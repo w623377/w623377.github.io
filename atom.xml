@@ -3,11 +3,11 @@
   <title>KINGのBLOG</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://w623377.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2022-12-03T16:28:03.588Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://w623377.github.io/"/>
+  <updated>2023-03-26T07:28:48.515Z</updated>
+  <id>https://w623377.github.io/</id>
   
   <author>
     <name>KING</name>
@@ -17,9 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hadoop简单介绍</title>
+    <link href="https://w623377.github.io/articles/7d7fca304299"/>
+    <id>https://w623377.github.io/articles/7d7fca304299</id>
+    <published>2023-03-26T06:57:25.000Z</published>
+    <updated>2023-03-26T07:28:48.515Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Hadoop的简单介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;1-大数据平台架构图&quot;&gt;&lt;a href=&quot;#1-大数据平台架构图&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="https://w623377.github.io/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="https://w623377.github.io/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一篇文章</title>
-    <link href="http://example.com/2022/12/04/di-yi-pian-wen-zhang/"/>
-    <id>http://example.com/2022/12/04/di-yi-pian-wen-zhang/</id>
+    <link href="https://w623377.github.io/undefined/d350d7b0ea2a"/>
+    <id>https://w623377.github.io/undefined/d350d7b0ea2a</id>
     <published>2022-12-03T16:28:03.000Z</published>
     <updated>2022-12-03T16:28:03.588Z</updated>
     
@@ -30,21 +58,21 @@
     
     
     
-    <category term="web" scheme="http://example.com/categories/web/"/>
+    <category term="web" scheme="https://w623377.github.io/categories/web/"/>
     
     
-    <category term="EncryptedTag" scheme="http://example.com/tags/EncryptedTag/"/>
+    <category term="EncryptedTag" scheme="https://w623377.github.io/tags/EncryptedTag/"/>
     
-    <category term="web" scheme="http://example.com/tags/web/"/>
+    <category term="web" scheme="https://w623377.github.io/tags/web/"/>
     
-    <category term="http" scheme="http://example.com/tags/http/"/>
+    <category term="http" scheme="https://w623377.github.io/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2022/12/03/hello-world/"/>
-    <id>http://example.com/2022/12/03/hello-world/</id>
+    <link href="https://w623377.github.io/undefined/f8545178e9f8"/>
+    <id>https://w623377.github.io/undefined/f8545178e9f8</id>
     <published>2022-12-03T14:45:36.800Z</published>
     <updated>2022-12-03T14:45:36.801Z</updated>
     
