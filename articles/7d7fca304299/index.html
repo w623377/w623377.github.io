@@ -61,9 +61,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="KINGのBLOG" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="KINGのBLOG" type="application/atom+xml">
 </head>
 
 
@@ -425,7 +425,8 @@
                 <blockquote>
 <p>Hadoop的简单介绍</p>
 </blockquote>
-<h5 id="1-大数据平台架构图"><a href="#1-大数据平台架构图" class="headerlink" title="1.大数据平台架构图"></a>1.大数据平台架构图</h5><p><img src="https://s2.51cto.com/images/blog/202203/10010529_6228de591a20145780.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=/format,webp/resize,m_fixed,w_1184" alt="Hadoop入门（一篇就够了）_hdfs"></p>
+<h5 id="1-大数据平台架构图"><a href="#1-大数据平台架构图" class="headerlink" title="1.大数据平台架构图"></a>1.大数据平台架构图</h5><img src="/articles/7d7fca304299/resize,m_fixed,w_1184.webp" class="" title="Hadoop入门（一篇就够了）_hdfs">
+
 <h5 id="2-Hadoop优势"><a href="#2-Hadoop优势" class="headerlink" title="2.Hadoop优势"></a>2.Hadoop优势</h5><ul>
 <li>Hadoop 是专为从单一服务器到上千台机器扩展，每个机器都可以提供本地计算和存储。</li>
 <li>Hadoop可以用单节点模式安装，但是只有多节点集群才能发挥 Hadoop 的优势，我们可以把<strong>集群扩展到上千个节点，而且扩展过程中不需要先停掉集群。</strong></li>
@@ -446,8 +447,7 @@
 <li><p>即 Hadoop 分布式文件系统（Hadoop Distribute File System），以分布式存储的方式存储数据。</p>
 </li>
 <li><p>HDFS 也是一种 Master-slave 架构，NameNode 是运行 master 节点的进程，它负责命名空间管理和文件访问控制。DataNode 是运行在 slave 节点的进程，它负责存储实际的业务数据</p>
-<p><img src="https://s2.51cto.com/images/blog/202203/10010529_6228de598090832952.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=/format,webp/resize,m_fixed,w_1184" alt="Hadoop入门（一篇就够了）_zookeeper_03"></p>
-</li>
+<img src="/articles/7d7fca304299/resize,m_fixed,w_1184-16798187859131.webp" class="" title="Hadoop入门（一篇就够了）_zookeeper_03"></li>
 </ul>
 <h6 id="3-2-MapReduce"><a href="#3-2-MapReduce" class="headerlink" title="3.2.MapReduce"></a>3.2.MapReduce</h6><ul>
 <li>Hadoop MapReduce 是一种编程模型，它是 Hadoop 最重要的组件之一。它用于计算海量数据，并把计算任务分割成许多在集群并行计算的独立运行的 task。</li>
@@ -460,7 +460,8 @@
 <li><strong>NodeManager</strong> ：负责监控容器使用资源情况，并把资源使用情况报告给 ResourceManager。这里所说的资源一般是指CPU、内存、磁盘、网络等。</li>
 <li><strong>ApplicationMaster</strong> 负责从 <strong>ResourceManager</strong> 申请资源，并与 <strong>NodeManager</strong> 一起对任务做持续监控工作。</li>
 </ul>
-<p><img src="https://s2.51cto.com/images/blog/202203/10010529_6228de59d598d72152.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=/format,webp/resize,m_fixed,w_1184" alt="Hadoop入门（一篇就够了）_hbase_05"></p>
+<img src="/articles/7d7fca304299/resize,m_fixed,w_1184-16798187859132.webp" class="" title="Hadoop入门（一篇就够了）_hbase_05">
+
 <p><strong>Yarn</strong> 具有下面这些特性：</p>
 <ul>
 <li><strong>多租户</strong>：Yarn允许在同样的 Hadoop数据集使用多种访问引擎。这些访问引擎可能是批处理，实时处理，迭代处理等；</li>
@@ -468,7 +469,7 @@
 <li><strong>可扩展性</strong>：Yarn可以根据实际需求扩展到几千个节点，多个独立的集群可以联结成一个更大的集群；</li>
 <li><strong>兼容性</strong>：Hadoop 1.x 的 MapReduce 应用程序可以不做任何改动运行在 Yarn集群上面。</li>
 </ul>
-<h5 id="4-Hadoop工作方式"><a href="#4-Hadoop工作方式" class="headerlink" title="4.Hadoop工作方式"></a>4.Hadoop工作方式</h5><p><img src="https://s2.51cto.com/images/blog/202203/10010529_6228de59f1ecd993.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=/format,webp/resize,m_fixed,w_1184" alt="Hadoop入门（一篇就够了）_hadoop_06"></p>
+<h5 id="4-Hadoop工作方式"><a href="#4-Hadoop工作方式" class="headerlink" title="4.Hadoop工作方式"></a>4.Hadoop工作方式</h5><img src="/articles/7d7fca304299/resize,m_fixed,w_1184-16798187859133.webp" class="" title="Hadoop入门（一篇就够了）_hadoop_06">
 
                 
             </div>
