@@ -6,7 +6,7 @@
   <link href="https://w623377.github.io/atom.xml" rel="self"/>
   
   <link href="https://w623377.github.io/"/>
-  <updated>2023-03-26T08:49:45.490Z</updated>
+  <updated>2023-03-30T09:06:51.187Z</updated>
   <id>https://w623377.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工厂方法和抽象工厂方法</title>
+    <link href="https://w623377.github.io/articles/6aeca309af2b/"/>
+    <id>https://w623377.github.io/articles/6aeca309af2b/</id>
+    <published>2023-03-30T08:57:52.902Z</published>
+    <updated>2023-03-30T09:06:51.187Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;工厂方法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;span id=&quot;工厂方法&quot;&gt;工厂方法&lt;/span&gt;&lt;/h2&gt;&lt;img src=&quot;/articles/6aeca309af2b/20160828082911344.png&quot; class</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="https://w623377.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="设计模式" scheme="https://w623377.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Hadoop简单介绍</title>
