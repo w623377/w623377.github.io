@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="单例模式">
-    <meta name="description" content="简介，这里修改">
+    <meta name="keywords" content="适配器模式">
+    <meta name="description" content="适配器模式">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>单例模式 | KINGのBLOG</title>
+    <title>适配器模式 | KINGのBLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/bg/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/bg/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">单例模式</h1>
+                    <h1 class="description center-align post-title">适配器模式</h1>
                 </div>
             </div>
         </div>
@@ -344,8 +344,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
-                                <span class="chip bg-color">单例模式</span>
+                            <a href="/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">
+                                <span class="chip bg-color">适配器模式</span>
                             </a>
                         
                     </div>
@@ -369,21 +369,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-30
+                    2023-03-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-30
+                    2023-03-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    866
+                    1k
                 </div>
                 
 
@@ -414,103 +414,78 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>简介</p>
+<p>适配器模式</p>
 </blockquote>
-<p><strong>单例模式</strong>，属于创建类型的一种常用的软件设计模式。通过单例模式的方法创建的类在当前进程中只有一个实例（根据需要，也有可能一个线程中属于单例，如：仅线程上下文内使用同一个实例）。就是采取一定的方法保证在整个的软件系统中，对某个类只能存在一个对象实例，并且该类只提供一个取得其对象实例的方法(静态方法)。</p>
-<h1><span id="饿汉式">饿汉式</span></h1><p>步骤</p>
-<ol>
-<li>构造器私有化</li>
-<li>类的内部创建对象</li>
-<li>向外暴露一个静态的公共方法</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="left">优点</th>
-<th align="left">缺点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">写法简单，在类装载的时完成实例化，避免了线程同步问题</td>
-<td align="left">类装载时完成实例化，没有达到LazyLoading的效果，若该实例从未使用，则会造成内存浪费</td>
-</tr>
-</tbody></table>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
-	<span class="token comment">//私有化构造器</span>
-	<span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>	
-	<span class="token punctuation">}</span>
-	<span class="token comment">//内部创建对象实例</span>
-	<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">//对外公有的静态方法</span>
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="使用场景">使用场景</span></h2><ul>
+<li>当需要使用一个现存的类，但它提供的接口与我们系统的接口不兼容，而我们还不能修改它时</li>
+<li>当多个团队独立开发系统的各功能模块，然后组合在一起，但由于某些原因事先不能确定接口时。</li>
+</ul>
+<h2><span id="uml类图">UML类图</span></h2><img src="/articles/72eff6d59d6b/v2-b989b7e4e70e29f68f147ee5f9d52afc_720w.webp" class title="img">
 
-<h1><span id="懒汉式">懒汉式</span></h1><p>需要调用的时候再创建类的实例化</p>
-<h2><span id="线程不安全">线程不安全</span></h2><p>起到了懒加载效果，但是只能在单线程使用，多线程会不安全，因为当多个线程并发同时判断instance为空时，就会相应的实例化多个对象。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span> <span class="token comment">//线程不安全</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">//调用时才实例化对象，懒汉式</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+<img src="/articles/72eff6d59d6b/Adapter-pattern.jpg" class title="Adapter-pattern">
+
+<ul>
+<li>Target （目标抽象类）</li>
+</ul>
+<p>是一个接口，它是我们客户端使用的目标接口</p>
+<ul>
+<li>Adaptee（适配者类）</li>
+</ul>
+<p>我们想要使用的接口与<code>Target</code>不兼容的类，它可以是一个接口，也可以是一个类。</p>
+<ul>
+<li>Adapter （适配器类）</li>
+</ul>
+<p><strong>适配器类，此模式的核心。它需要实现目标接口<code>Target</code>，而且必须要引用<code>Adaptee</code>，因为我们要在此类中包装<code>Adaptee</code>的功能</strong></p>
+<h2><span id="实例">实例</span></h2><p>最近王二狗工作上遇到了一件非常不开心的事：由于老项目中的日志系统非常粗糙，导致他debug时候非常吃力，为此都加了好几次班了，媳妇都不高兴了。某天，二狗又一次披星戴月的回到家中，蹑手蹑脚脱了衣服慢慢爬上床时，此时只听的床头那边幽幽的传来一声抱怨：二狗，你天天忙着调试bug，你就不担心你媳妇被隔壁老王调试了？</p>
+<p>二狗深感不安，决定彻底扭转这个不利的局面。于是他调研了一个非常棒的三方开源日志库来改进项目的log系统，但是此开源库与项目中接口不兼容，这几乎是肯定的，所以王二狗又一次展现出了其高超的程序设计能力，精准的采用了适配器模式来完成这个功能。</p>
+<img src="/articles/72eff6d59d6b/v2-8608d421533bf07a6bdf16249709e8e2_720w.webp" class title="img">
+
+<h2><span id="第一确定目标接口">第一，确定目标接口</span></h2><p>系统原来的日志接口如下</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">LogFactory</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">debug</span><span class="token punctuation">(</span><span class="token class-name">String</span> tag<span class="token punctuation">,</span><span class="token class-name">String</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2><span id="第二三方库接口及实现">第二，三方库接口及实现</span></h2><p>下面是第三方库提供的日志功能，但是其接口与二狗他们系统目前使用的不兼容。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">NbLogger</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token keyword">int</span> priority<span class="token punctuation">,</span> <span class="token class-name">String</span> message<span class="token punctuation">,</span> <span class="token class-name">Object</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//具体提供日志功能的实现类</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NbLoggerImp</span> <span class="token keyword">implements</span> <span class="token class-name">NbLogger</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token keyword">int</span> priority<span class="token punctuation">,</span> <span class="token class-name">String</span> message<span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"牛逼logger记录:%s"</span><span class="token punctuation">,</span>message<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2><span id="线程安全">线程安全</span></h2><p>上面线程不安全，那上锁不就好了，使用synchronized关键字。 这样虽然解决了线程安全，但其实实例化操作只做一次，而获取实例(即getInstance)的操作是很多次的，把调用的方法加上同步，会大大降低效率。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span> <span class="token comment">//线程安全</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-    <span class="token comment">//synchronized同步处理</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+<h2><span id="第三构建适配器类">第三，构建适配器类</span></h2><p>这个类是适配器模式的核心，通过此类就可以将三方库提供的接口转换为系统的目标接口</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LogAdapter</span> <span class="token keyword">implements</span> <span class="token class-name">LogFactory</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">NbLogger</span> nbLogger<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">LogAdapter</span><span class="token punctuation">(</span><span class="token class-name">NbLogger</span> nbLogger<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>nbLogger <span class="token operator">=</span> nbLogger<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3><span id="双重检查">双重检查</span></h3><p>上面代码效率低，那在同步前判断一下有没有实例化不就好了，若没有实例化则用同步方法new一个，否则直接return即可。即所谓的双重检查。 需要用到关键字volatile，防止指令重排。如果不用volatile关键字，就会和线程不安全情形一样，在if判断那会有并发。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span> <span class="token comment">//双重检查</span>
-	<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">volatile</span> <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span><span class="token comment">//防止指令重排 按照开辟堆空间，赋值，初始化的顺序</span>
-	<span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//判断是否实例化</span>
-			<span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">Singleton</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-				<span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-					instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-				<span class="token punctuation">}</span>
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span>
-		<span class="token keyword">return</span> instance<span class="token punctuation">;</span> <span class="token comment">//否则直接return</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">debug</span><span class="token punctuation">(</span><span class="token class-name">String</span> tag<span class="token punctuation">,</span> <span class="token class-name">String</span> message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">requireNonNull</span><span class="token punctuation">(</span>nbLogger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        nbLogger<span class="token punctuation">.</span><span class="token function">d</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>这样既实现了懒加载，又保证了线程安全。</p>
-<h3><span id="静态内部类">静态内部类</span></h3><p>静态内部类在外部类装载时不会实例化，当调用的时候才会装载并实例化，且JVM保证了其装载时的线程安全性。也能保证懒加载和线程安全，有点像自带版的双重检查。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
-	<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">volatile</span> <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span>
-	<span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-	<span class="token comment">//静态内部类,包含一个静态属性：Singleton</span>
-	<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">SingletonInstance</span> <span class="token punctuation">{</span>
-		<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Singleton</span> <span class="token constant">INSTANCE</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-	<span class="token punctuation">}</span>
-	<span class="token comment">//对外公有的静态方法，直接返回SingletonInstance.INSTANCE</span>
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> <span class="token class-name">SingletonInstance</span><span class="token punctuation">.</span><span class="token constant">INSTANCE</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3><span id="枚举">枚举</span></h3><p>其实，使用枚举也能实现单例模式，不仅能避免多线程同步问题，也能防止反序列化重新创建新的对象。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">enum</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
-	<span class="token constant">INSTANCE</span><span class="token punctuation">;</span> <span class="token comment">//属性</span>
-	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Singleton"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
+<p><code>LogAdapter</code>实现了系统的目标接口，同时持有三方库<code>NbLogger</code>的引用。</p>
+<h2><span id="第四客户端使用">第四，客户端使用</span></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AdapterClient</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">recordLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">LogFactory</span> logFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LogAdapter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">NbLoggerImp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        logFactory<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"Test"</span><span class="token punctuation">,</span> <span class="token string">"我将使用牛逼logger打印log"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看到，通过适配器客户端就可以很轻松的切换到新的日志系统了。</p>
+<h2><span id="优点"></span></h2><p><strong>将目标类和适配者类解耦</strong>，通过引入一个适配器类来重用现有的适配者类，而无须修改原有代码。</p>
+<p>增加了类的透明性和复用性，将具体的实现封装在适配者类中，对于客户端类来说是透明的，而且提高了适配者的复用性。</p>
+<p>灵活性和扩展性都非常好，通过使用配置文件，可以很方便地更换适配器，也可以在不修改原有代码的基础上增加新的适配器类，完全符合“开闭原则”。</p>
+<h2><span id="缺点"></span></h2><p>过多地使用适配器，会让系统非常零乱，不易整体进行把握。比如，明明看到调用的是 A 接口，其实内部被适配成了 B 接口的实现，一个系统如果太多出现这种情况，无异于一场灾难。因此如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。</p>
+<p>对于类适配器而言，由于 JAVA 至多继承一个类，所以至多只能适配一个适配者类，而且目标类必须是抽象类</p>
 
                 
             </div>
@@ -537,7 +512,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://w623377.github.io/articles/1fdfb6516373/">https://w623377.github.io/articles/1fdfb6516373/</a>
+                    <a href="https://w623377.github.io/articles/72eff6d59d6b/">https://w623377.github.io/articles/72eff6d59d6b/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,8 +550,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
-                                    <span class="chip bg-color">单例模式</span>
+                                <a href="/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">
+                                    <span class="chip bg-color">适配器模式</span>
                                 </a>
                             
                         </div>
@@ -929,28 +904,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/articles/8511385e0da0/">
+                <a href="/articles/72eff6d59d6b/">
                     <div class="card-image">
                         
-                        <img src="/medias/bg/8.jpg" class="responsive-img" alt="建造者模式">
+                        <img src="/medias/bg/3.jpg" class="responsive-img" alt="适配器模式">
                         
-                        <span class="card-title">建造者模式</span>
+                        <span class="card-title">适配器模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简介，这里修改
+                            适配器模式
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -963,11 +939,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">建造者模式</span>
+                    <a href="/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">适配器模式</span>
                     </a>
                     
                 </div>
@@ -981,23 +958,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/articles/6aeca309af2b/">
+                <a href="/articles/9078799960f3/">
                     <div class="card-image">
                         
-                        <img src="/medias/bg/2.jpg" class="responsive-img" alt="工厂方法和抽象工厂方法">
+                        <img src="/medias/bg/4.jpg" class="responsive-img" alt="原型模式">
                         
-                        <span class="card-title">工厂方法和抽象工厂方法</span>
+                        <span class="card-title">原型模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            工厂方法和抽象工厂方法
+                            简介，这里修改
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-31
                             </span>
                         <span class="publish-author">
                             
@@ -1014,8 +991,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">原型模式</span>
                     </a>
                     
                 </div>

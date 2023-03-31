@@ -6,7 +6,7 @@
   <link href="https://w623377.github.io/atom.xml" rel="self"/>
   
   <link href="https://w623377.github.io/"/>
-  <updated>2023-03-31T08:19:14.546Z</updated>
+  <updated>2023-03-31T10:49:43.307Z</updated>
   <id>https://w623377.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>适配器模式</title>
+    <link href="https://w623377.github.io/articles/72eff6d59d6b/"/>
+    <id>https://w623377.github.io/articles/72eff6d59d6b/</id>
+    <published>2023-03-31T10:40:38.000Z</published>
+    <updated>2023-03-31T10:49:43.307Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;适配器模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="https://w623377.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="适配器模式" scheme="https://w623377.github.io/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>原型模式</title>
