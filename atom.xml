@@ -6,7 +6,7 @@
   <link href="https://w623377.github.io/atom.xml" rel="self"/>
   
   <link href="https://w623377.github.io/"/>
-  <updated>2023-04-03T12:52:31.276Z</updated>
+  <updated>2023-04-04T09:38:40.852Z</updated>
   <id>https://w623377.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代理模式</title>
+    <link href="https://w623377.github.io/articles/5a5e1ad9f3c3/"/>
+    <id>https://w623377.github.io/articles/5a5e1ad9f3c3/</id>
+    <published>2023-04-04T09:18:39.118Z</published>
+    <updated>2023-04-04T09:38:40.852Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;代理模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="https://w623377.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="代理模式" scheme="https://w623377.github.io/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>模板方法</title>
