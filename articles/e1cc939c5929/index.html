@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="原型模式">
-    <meta name="description" content="简介，这里修改">
+    <meta name="keywords" content="SpringCloud">
+    <meta name="description" content="OpenFeign">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>原型模式 | KINGのBLOG</title>
+    <title>OpenFeign | KINGのBLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -328,12 +328,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/bg/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/bg/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">原型模式</h1>
+                    <h1 class="description center-align post-title">OpenFeign</h1>
                 </div>
             </div>
         </div>
@@ -357,8 +357,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
-                                <span class="chip bg-color">原型模式</span>
+                            <a href="/tags/OpenFeign/">
+                                <span class="chip bg-color">OpenFeign</span>
                             </a>
                         
                     </div>
@@ -369,8 +369,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                设计模式
+                            <a href="/categories/SpringCloud/" class="post-category">
+                                SpringCloud
                             </a>
                         
                     </div>
@@ -382,28 +382,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-31
+                    2023-04-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-31
+                    2023-04-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -422,208 +422,203 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<h6><span id="原型模式">原型模式</span></h6></blockquote>
-<p>原型模式 : 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象</p>
-<p>-<br>  设计模式类型 : 创建型设计模式 ;</p>
-<ul>
-<li><p>原型实例对象 : 给出原型实例对象 , 根据该对象创建新对象 ;</p>
-</li>
-<li><p>创建对象类型 : 创建对象的种类由原型的实例对象类型确定 ;</p>
-</li>
-<li><p>创建方式 : 不调用构造函数 , 而是通过克隆原型的实例对象 , 使用现有对象创建另一个相同类型的对象 , 隐藏创建细节 ;</p>
-</li>
-</ul>
-<h6><span id="使用场景">使用场景</span></h6><p>原型模式使用场景 : 原型模式的目的是 降低实例对象个数 , 减少构造函数的调用次数 ;</p>
-<ul>
-<li><p><strong>类初始化消耗资源过多</strong> : 如果类初始化时消耗过多的资源 , 如这个类中某个成员占用大量内存 , 为了节省开销 ;</p>
-</li>
-<li><p>初始化繁琐耗时 : 类对象创建时经过大量的计算 , 或与本地资源 ( 数据库 , 文件 ) 频繁交互 , 每次创建消耗大量的 CPU 与 时间资源 ;</p>
-</li>
-<li><p><strong>构造函数复杂</strong> : 类中定义的构造函数复杂 ;</p>
-</li>
-<li><p><strong>实例对象数量庞大</strong> : 如果在内存中循环创建了很多该实例对象 , 就可以使用原型模式复用不用的对象 , 用于创建新对象 ;</p>
-</li>
-</ul>
-<h6><span id="优缺点">优缺点</span></h6><p>1 . 原型模式优点 : <strong>性能高 , 简单</strong> ;</p>
-<ul>
-<li><strong>性能高</strong> : 使用原型模式复用的方式创建实例对象 , 比使用构造函数重新创建对象性能要高 ; ( 针对类实例对象开销大的情况 )</li>
-<li><strong>流程简单</strong> : 原型模式可以简化创建的过程 , 可以直接修改现有的对象实例的值 , 达到复用的目的 ; ( 针对构造函数繁琐的情况 )</li>
-</ul>
-<p>2 . 原型模式缺点 : <strong>实现复杂 , 坑多</strong> ;</p>
-<ul>
-<li><p><strong>覆盖 clone 方法 ( 必须 )</strong> : 必须重写对象的 clone 方法 , Java 中提供了 cloneable 标识该对象可以被拷贝 , 但是必须覆盖 Object 的 clone 方法才能被拷贝 ;</p>
-</li>
-<li><p><strong>深拷贝 与 浅拷贝 风险</strong> : 克隆对象时进行的一些修改 , 容易出错 ; 需要灵活运用深拷贝与浅拷贝操作 ;</p>
-</li>
-<li><p><strong>不符合开闭原则</strong>：需要为每一个类配备一个克隆方法，这对全新的类来说不是很难。但对已有的类进行改造时，需要修改其源代码，违背了开闭原则(OCP)。</p>
-</li>
-</ul>
-<h6><span id="浅拷贝">浅拷贝</span></h6><ul>
-<li>对于数据类型是基本数据类型的成员变量，浅拷贝会直接进行值传递，也就是将该属性值复制一份给新的对象。</li>
-<li>对于数据类型是引用数据类型的成员变量，比如说成员变量是某个数组、某个类的对象等，那么浅拷贝会进行</li>
-<li>引用传递，也就是只是将该成员变量的引用值（内存地址)复制一份给新的对象。因为实际上两个对象的该成员变量都指向同一个实例。在这种情况下，在一个对象中修改该成员变量会影响到另一个对象的该成员变量值。</li>
-<li>浅拷贝是使用默认的clone()方法来实现的，即sheep=(Sheep)super.clone();</li>
-</ul>
-<h6><span id="深拷贝">深拷贝</span></h6><ul>
-<li>复制对象的所有基本数据类型的成员变量值</li>
-<li>为所有引用数据类型的成员变量申请存储空间，并复制每个引用数据类型成员变量所引用的对象，直到该对象可达的所有对象。也就是说，对象进行深拷贝要对整个对象(包括对象的引用类型)进行拷贝</li>
-<li>深拷贝实现方式1：重写clone方法来实现深拷贝</li>
-<li>深拷贝实现方式2：通过对象序列化实现深拷贝(推荐)</li>
-</ul>
-<h6><span id="序列化实现深拷贝">序列化实现深拷贝</span></h6><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>weirdo<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>deepClone</span><span class="token punctuation">;</span>
+<p>OpenFeign</p>
+</blockquote>
+<h1><span id="微服务间的远程接口调用openfeign-的使用">微服务间的远程接口调用：OpenFeign 的使用</span></h1><h2><span id="前言openfeign-能做什么"><strong>前言：OpenFeign 能做什么？</strong></span></h2><p><code>OpenFeign</code> 是一种声明式、模板化的 HTTP 客户端。在 Spring Cloud 中使用 OpenFeign ，可以做到使用 HTTP 请求访问远程服务，就像调用本地方法一样的，开发者完全感知不到这是在调用远程方法，更感知不到在访问 HTTP 请求。</p>
+<p>其用法就是编写一个接口，在接口上添加注解。如此就能轻而易举的调用远程服务。</p>
+<p>有如此强大的东西，我们肯定不能放过使用的机会，就像有时你有特殊的要求必须拉别的女孩的手，而此时有个中间人能帮你实现这个愿望，你拉别的女孩子的手就像拉自己女朋友的手一样方便！</p>
+<img src="/articles/e1cc939c5929/7000.png" class title="img">
 
-<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+<p><code>OpenFeign</code> 在微服务中的作用就像中间方一样，当你需要调用另一个微服务的接口时，使用 <code>OpenFeign</code> 就像调用本服务的接口一样丝滑。</p>
+<h2><span id="操练欲善其事先利其器"><strong>操练：欲善其事，先利其器</strong></span></h2><p>既然是远程调用，那肯定至少得有2个微服务，本系列文章已经前面已经有了几个服务，我们就调用 <code>nacos-provider</code> 这个服务提供者的接口。</p>
+<p>这里新建一个 <code>open-feign-service</code> 子模块服务，引入 <code>spring-cloud-starter-loadbalancer</code> 和 <code>spring-cloud-starter-openfeign</code> 两个依赖：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>loadbalancer<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>openfeign<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> sex<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">Weight</span> weight<span class="token punctuation">;</span>
+<p>复制</p>
+<p>父模块中添加子模块，现有模块如下：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>modules<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>internal<span class="token operator">-</span>common<span class="token operator">&lt;</span><span class="token operator">/</span>module<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>nacos<span class="token operator">-</span>provider<span class="token operator">&lt;</span><span class="token operator">/</span>module<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>nacos<span class="token operator">-</span>consumer<span class="token operator">&lt;</span><span class="token operator">/</span>module<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>nacos<span class="token operator">-</span>config<span class="token operator">&lt;</span><span class="token operator">/</span>module<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>sentinel<span class="token operator">-</span>service<span class="token operator">&lt;</span><span class="token operator">/</span>module<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>open<span class="token operator">-</span>feign<span class="token operator">-</span>service<span class="token operator">&lt;</span><span class="token operator">/</span>module<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>modules<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token keyword">public</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span><span class="token keyword">int</span> age<span class="token punctuation">,</span><span class="token class-name">String</span> sex<span class="token punctuation">,</span><span class="token class-name">Weight</span> weight<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> sex<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>weight <span class="token operator">=</span> weight<span class="token punctuation">;</span>
+<p>复制</p>
+<p>如何在 <code>open-feign-service</code> 服务中调用 <code>nacos-provider</code> 服务的接口呢？前面 <code>nacos-consumer</code> 服务使用了 <code>loadbalancer</code> 和 <code>RestTemplate</code> 进行了调用，现在我们在  <code>open-feign-service</code> 服务使用 <strong>OpenFeign</strong> 来进行调用。</p>
+<h3><span id="创建-feignclient-接口"><strong>创建 FeignClient 接口</strong></span></h3><p>要将 Feign 引入到到项目中：</p>
+<p><strong>1.</strong> 首先需要在启动类上添加 <code>@EnableFeignClients</code> 注解：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">@SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OpenFeignServiceApplication</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">String<span class="token punctuation">[</span><span class="token punctuation">]</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>OpenFeignServiceApplication<span class="token punctuation">.</span>class<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> age<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> sex<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSex</span><span class="token punctuation">(</span><span class="token class-name">String</span> sex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> sex<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token class-name">Weight</span> <span class="token function">getWeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> weight<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setWeight</span><span class="token punctuation">(</span><span class="token class-name">Weight</span> weight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>weight <span class="token operator">=</span> weight<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<p>复制</p>
+<p><strong>2.</strong> 创建一个 Service 接口，添加 <code>@FeignClient</code> 注解：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">@Service
+@<span class="token function">FeignClient</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"nacos-provider"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ProductService</span> <span class="token punctuation">{</span>
 
     <span class="token comment">/**
-     * 深拷贝 - 方式2 通过对象的序列化实现 (推荐)
-     * @return
+     * 调用远程服务 nacos-provider 的 product/{id} 接口
+     * @param id 参数 id
+     * @return 返回
      */</span>
-    <span class="token keyword">public</span> <span class="token class-name">Dog</span> <span class="token function">serializableClone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">//创建流对象</span>
-        <span class="token class-name">ByteArrayOutputStream</span> bos <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token class-name">ObjectOutputStream</span> oos <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token class-name">ByteArrayInputStream</span> bis <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token class-name">ObjectInputStream</span> ois <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    @<span class="token function">GetMapping</span><span class="token punctuation">(</span><span class="token string">"/product/{id}"</span><span class="token punctuation">)</span>
+    String <span class="token function">getProductById</span><span class="token punctuation">(</span>@<span class="token function">PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Long id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+<p>复制</p>
+<p>关于 <code>FeignClient</code> 注解，需要知道：</p>
+<ul>
+<li><code>name</code> ： 是一个任意的客户端名称，用于创 Spring Cloud LoadBalancer 客户端；</li>
+<li><code>url</code> ：url一般用于调试，可以手动指定 <code>@FeignClient</code> 调用的地址；</li>
+<li><code>configuration</code> ：Feigin 配置类，可自定义 Feign 的 Encode，Decode，LogLevel，Contract；</li>
+<li><code>fallback</code> ：定义 <strong>容错</strong> 的类，当远程调用的接口失败或者超时的时候，会调用对应接口的容错逻辑，fallback 执行的类必须实现<code>@FeignClient</code> 标记的接口；</li>
+<li><code>fallbackFactory</code> ：工厂类，用于生成 fallback 类实例，通过此属性可以实现每个接口通用的容错逻辑，以达到减少重复的代码；</li>
+<li><code>path</code> ：定义当前 FeignClient 的统一前缀。</li>
+</ul>
+<p>本案例只是用 <code>name</code> 属性指定调用的服务名称，容错属性后续可与 Sentinel 整合再说。</p>
+<p><strong>3.</strong> 控制层通过 <code>FeignClient</code> 远程调用</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">@RestController
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
 
-            <span class="token comment">//序列化</span>
-            bos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            oos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>bos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment">//当前这个对象以对象流的方式输出</span>
-            oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> ProductService productService<span class="token punctuation">;</span>
 
-            <span class="token comment">//反序列化</span>
-            bis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayInputStream</span><span class="token punctuation">(</span>bos<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            ois <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>bis<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">Dog</span> copyObj <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Dog</span><span class="token punctuation">)</span>ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> copyObj<span class="token punctuation">;</span>
-
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
-            <span class="token comment">//关闭流</span>
-            <span class="token keyword">try</span> <span class="token punctuation">{</span>
-                bos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                oos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                bis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                ois<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e2<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>weirdo<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>deepClone</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">Serializable</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Weight</span> <span class="token keyword">implements</span> <span class="token class-name">Cloneable</span><span class="token punctuation">,</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">int</span> weight<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token class-name">Weight</span><span class="token punctuation">(</span><span class="token keyword">int</span> weight<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>weight <span class="token operator">=</span> weight<span class="token punctuation">;</span>
+    @<span class="token function">GetMapping</span><span class="token punctuation">(</span><span class="token string">"/product/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">getProduct</span><span class="token punctuation">(</span>@<span class="token function">PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> productService<span class="token punctuation">.</span><span class="token function">getProductById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getWeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> weight<span class="token punctuation">;</span>
+    @Autowired
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setProductService</span><span class="token punctuation">(</span><span class="token parameter">ProductService productService</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>productService <span class="token operator">=</span> productService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>复制</p>
+<p>控制层引入被 <code>FeighClient</code> 标记的接口 <code>ProductService</code> ，直接调用接口的 <code>getProductById</code> 方法即可实现远程调用 <code>nacos-provider</code> 服务的 <code>getProduct</code> ，这里看一下远程服务的处理逻辑：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">@RestController
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> final <span class="token keyword">static</span> Map<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> String<span class="token operator">&gt;</span> <span class="token constant">PRODUCT_MAP</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        <span class="token constant">PRODUCT_MAP</span><span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>1L<span class="token punctuation">,</span> <span class="token string">"香飘飘奶茶"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">PRODUCT_MAP</span><span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>2L<span class="token punctuation">,</span> <span class="token string">"雀巢咖啡"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">PRODUCT_MAP</span><span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>3L<span class="token punctuation">,</span> <span class="token string">"百事可乐"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setWeight</span><span class="token punctuation">(</span><span class="token keyword">int</span> weight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>weight <span class="token operator">=</span> weight<span class="token punctuation">;</span>
+    @<span class="token function">Value</span><span class="token punctuation">(</span><span class="token string">"${server.port}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String serverPort<span class="token punctuation">;</span>
+
+    @<span class="token function">GetMapping</span><span class="token punctuation">(</span><span class="token string">"/product/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">getProduct</span><span class="token punctuation">(</span><span class="token parameter">@PathVariable Long id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> serverPort <span class="token operator">+</span> <span class="token string">"："</span> <span class="token operator">+</span> <span class="token constant">PRODUCT_MAP</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Weight</span> weight <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            weight <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Weight</span><span class="token punctuation">)</span><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">CloneNotSupportedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> weight<span class="token punctuation">;</span>
+<p>复制</p>
+<h3><span id="验证"><strong>验证</strong></span></h3><p>直接访问本服务：<a target="_blank" rel="noopener" href="http://localhost:6061/product/3">http://localhost:6061/product/3</a> ，可以看到调用了远程服务 <code>nacos-provider</code> 的接口：</p>
+<img src="/articles/e1cc939c5929/d4850601532ec74b89bc6d263ed6ce6d.gif" class title="img">
+
+<p>从结果看，还实现了访问服务的<a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/clb?from=20065&amp;from_column=20065">负载均衡</a>！</p>
+<h2><span id="优化事无巨细极致体验"><strong>优化：事无巨细，极致体验</strong></span></h2><h3><span id="日志"><strong>日志</strong></span></h3><p><code>OpenFeign</code> 提供了日志打印功能，我们可以通过配置来调整日志级别，从而了解 <code>OpenFeign</code> 中 Http 请求的细节。 通过设置日志，可以对 Feign 接口的调用情况进行监控和输出。</p>
+<p><code>OpenFeign</code> 的日志级别主要有以下几种：</p>
+<ul>
+<li><code>NONE </code>：默认的，不显示任何日志；</li>
+<li><code>BASIC</code> ：仅记录请求方法、URL、响应状态码及执行时间；</li>
+<li><code>HEADERS</code> ：除了 BASIC 中定义的信息之外，还有请求和响应的头信息；</li>
+<li><code>FULL</code> ：除了 HEADERS 中定义的信息之外，还有请求和响应的正文及元数据。</li>
+</ul>
+<p>使用步骤：</p>
+<p><strong>1.</strong> 设置 Feign Logger Level：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">@Bean
+Logger<span class="token punctuation">.</span>Level <span class="token function">feignLoggerLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 开启详细日志</span>
+    <span class="token keyword">return</span> Logger<span class="token punctuation">.</span>Level<span class="token punctuation">.</span><span class="token constant">FULL</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>复制</p>
+<p>设置什么级别，根据情况而定。</p>
+<p><strong>2.</strong> 在配置文件中给指定的 FeignClient 接口加指定的日志级别</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">logging</span><span class="token operator">:</span>
+  <span class="token literal-property property">level</span><span class="token operator">:</span>
+    # 给指定的 FeignClient 接口加指定的日志级别
+    cn<span class="token punctuation">.</span>chendapeng<span class="token punctuation">.</span>springcloud<span class="token punctuation">.</span>openfeignservice<span class="token punctuation">.</span>service<span class="token punctuation">.</span>ProductService<span class="token operator">:</span> debug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>复制</p>
+<p>使用效果：</p>
+<img src="/articles/e1cc939c5929/7000-16810456881591.png" class title="img">
+
+<p>请求的详细情况就以日志的形式打印出来了。</p>
+<h3><span id="关于超时时间"><strong>关于超时时间</strong></span></h3><p><code>spring-cloud-starter-openfeign</code> 支持 <code>spring-cloud-starter-loadbalancer</code> 。我们在项目中已经添加了 <code>spring-cloud-starter-loadbalancer</code>依赖：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>loadbalancer<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>复制</p>
+<p>这样在 <code>@FeignClient</code> 注解中，当设定了 <code>name = "nacos-provider"</code> 客户端名称后，便默认使用了 <strong>Spring Cloud LoadBalancer</strong> 进行负载均衡访问 <code>nacos-provider</code> ，在老版本中，集成的是 <strong>Ribbon</strong> ，它默认的响应时间是 1 s，可以通过 <code>ribbon.ReadTimeout</code> 和 <code>ribbon.ConnectTimeout</code> 来设置客户端超时时间。</p>
+<p><strong>Spring Cloud Loadbalancer 默认没有超时时间的限制。</strong></p>
+<p>但是我们依然可以在默认客户端（<strong>default</strong>）和命名客户端上（<strong>注解 FeignClient 设置的 name，比如本demo中的 nacos-provider</strong>）配置超时。</p>
+<p>OpenFeign 使用两个超时参数：</p>
+<ul>
+<li><code>connectTimeout</code> 防止由于<a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/cvm?from=20065&amp;from_column=20065">服务器</a>处理时间长而阻塞调用者。</li>
+<li><code>readTimeout</code> 从连接建立时开始，在返回响应时间过长时触发。</li>
+</ul>
+<p>具体设置方式：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">feign</span><span class="token operator">:</span>
+  <span class="token literal-property property">client</span><span class="token operator">:</span>
+    <span class="token literal-property property">config</span><span class="token operator">:</span>
+      # 默认的超时时间设置
+      <span class="token keyword">default</span><span class="token operator">:</span>
+        <span class="token literal-property property">connectTimeout</span><span class="token operator">:</span> <span class="token number">5000</span>
+        <span class="token literal-property property">readTimeout</span><span class="token operator">:</span> <span class="token number">5000</span>
+      # 在指定的 FeignClient 设置超时时间，覆盖默认的设置
+      nacos<span class="token operator">-</span>provider<span class="token operator">:</span>
+        <span class="token literal-property property">connectTimeout</span><span class="token operator">:</span> <span class="token number">1000</span>
+        <span class="token literal-property property">readTimeout</span><span class="token operator">:</span> <span class="token number">1000</span>
+        <span class="token literal-property property">loggerLevel</span><span class="token operator">:</span> full<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>复制</p>
+<p>假如设置 <code>nacos-provider</code> 的超时时间为 1s ，我们通过在 <code>nacos-provider</code> 设置一个延迟 3 秒执行的方法，来模仿长业务线调用。</p>
+<p><code>nacos-provider</code> 的 <strong>cn.chendapeng.springcloud.nacosprovider.controller.TestController</strong> ：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">@<span class="token function">GetMapping</span><span class="token punctuation">(</span><span class="token string">"/product/{id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> String <span class="token function">getProduct</span><span class="token punctuation">(</span><span class="token parameter">@PathVariable Long id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 添加 sleep 时间，模拟超时连接</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        TimeUnit<span class="token punctuation">.</span><span class="token constant">SECONDS</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>InterruptedException e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> serverPort <span class="token operator">+</span> <span class="token string">"："</span> <span class="token operator">+</span> <span class="token constant">PRODUCT_MAP</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>weirdo<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>deepClone</span><span class="token punctuation">;</span>
+<p>复制</p>
+<p>调用效果：</p>
+<img src="/articles/e1cc939c5929/7000-16810456881592.png" class title="img">
 
-<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>fastjson<span class="token punctuation">.</span></span><span class="token class-name">JSONObject</span></span><span class="token punctuation">;</span>
+<img src="/articles/e1cc939c5929/7000-16810456881593.png" class title="img">
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
-
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">CloneNotSupportedException</span> <span class="token punctuation">{</span>
-
-		<span class="token comment">//方式2：通过序列化来实现深拷贝</span>
-		<span class="token class-name">Weight</span> dogWeight <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Weight</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">Dog</span> dog1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">"大黄"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"公"</span><span class="token punctuation">,</span>dogWeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">Dog</span> dog2 <span class="token operator">=</span> dog1<span class="token punctuation">.</span><span class="token function">serializableClone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"方式2：通过序列化来实现深拷贝"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"dog1："</span><span class="token operator">+</span> <span class="token class-name">JSONObject</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>dog1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"dog2："</span><span class="token operator">+</span> <span class="token class-name">JSONObject</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>dog2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"大黄去了一趟泰国，一年后..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		dog1<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		dog1<span class="token punctuation">.</span><span class="token function">setSex</span><span class="token punctuation">(</span><span class="token string">"母"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		dogWeight<span class="token punctuation">.</span><span class="token function">setWeight</span><span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"dog1："</span><span class="token operator">+</span> <span class="token class-name">JSONObject</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>dog1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"dog2："</span><span class="token operator">+</span> <span class="token class-name">JSONObject</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>dog2<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"------------&gt;深拷贝，拷贝后的数据不受原来属性变更影响"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<img src="/articles/9078799960f3/20201205163108139.png" class title="在这里插入图片描述">
+<blockquote>
+<p>❝本系列文章代码仓库：<a target="_blank" rel="noopener" href="https://github.com/ChenDapengJava/SpringCloudAlibabaDemo">https://github.com/ChenDapengJava/SpringCloudAlibabaDemo</a></p>
+</blockquote>
+<p>以上就是本文的全部内容了，本次导航结束。</p>
 
                 
             </div>
@@ -650,7 +645,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://w623377.github.io/articles/9078799960f3/">https://w623377.github.io/articles/9078799960f3/</a>
+                    <a href="https://w623377.github.io/articles/e1cc939c5929/">https://w623377.github.io/articles/e1cc939c5929/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -688,8 +683,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
-                                    <span class="chip bg-color">原型模式</span>
+                                <a href="/tags/OpenFeign/">
+                                    <span class="chip bg-color">OpenFeign</span>
                                 </a>
                             
                         </div>
@@ -768,45 +763,47 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/articles/72eff6d59d6b/">
+                <a href="/articles/e1cc939c5929/">
                     <div class="card-image">
                         
-                        <img src="/medias/bg/3.jpg" class="responsive-img" alt="适配器模式">
+                        <img src="/medias/bg/1.jpg" class="responsive-img" alt="OpenFeign">
                         
-                        <span class="card-title">适配器模式</span>
+                        <span class="card-title">OpenFeign</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            适配器模式
+                            OpenFeign
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
+                            <a href="/categories/SpringCloud/" class="post-category">
+                                    SpringCloud
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">适配器模式</span>
+                    <a href="/tags/OpenFeign/">
+                        <span class="chip bg-color">OpenFeign</span>
                     </a>
                     
                 </div>
@@ -820,30 +817,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/articles/8511385e0da0/">
+                <a href="/articles/988a0a996a10/">
                     <div class="card-image">
                         
-                        <img src="/medias/bg/8.jpg" class="responsive-img" alt="建造者模式">
+                        <img src="/medias/bg/10.jpg" class="responsive-img" alt="计算机网络">
                         
-                        <span class="card-title">建造者模式</span>
+                        <span class="card-title">计算机网络</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简介，这里修改
+                            计算机网络
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
                                 </a>
                             
                             
@@ -853,8 +850,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">建造者模式</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>
